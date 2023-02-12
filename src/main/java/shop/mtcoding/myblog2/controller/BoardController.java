@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import shop.mtcoding.myblog2.dto.ResponseDto;
 import shop.mtcoding.myblog2.dto.board.BoardReq.BoardSaveReqDto;
 import shop.mtcoding.myblog2.handler.ex.CustomApiException;
+import shop.mtcoding.myblog2.model.BoardRepository;
 import shop.mtcoding.myblog2.model.User;
 import shop.mtcoding.myblog2.service.BoardService;
 
@@ -25,6 +27,9 @@ public class BoardController {
 
     @Autowired
     private BoardService boardService;
+
+    @Autowired
+    private BoardRepository boardRepository;
 
     @PostMapping("/board")
     public @ResponseBody ResponseEntity<?> save(@RequestBody BoardSaveReqDto boardSaveReqDto) {
@@ -48,7 +53,8 @@ public class BoardController {
     }
 
     @GetMapping({ "/", "/board" })
-    public String main() {
+    public String main(Model model) {
+        model.addAttribute("dtos", boardRepository.findAllWithUser());
         return "board/main";
     }
 
