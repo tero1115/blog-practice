@@ -58,6 +58,7 @@ public class BoardControllerTest {
     }
 
     @Test
+
     public void delete_test() throws Exception {
         // given
         int id = 1;
