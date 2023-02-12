@@ -1,4 +1,4 @@
-package shop.mtcoding.myblog.dto.board;
+package shop.mtcoding.myblog2.dto.board;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,16 +11,6 @@ public class BoardResp {
         private int id;
         private String title;
         private String thumbnail;
-        private String username;
-    }
-
-    @Setter
-    @Getter
-    public static class BoardDetailRespDto {
-        private int id;
-        private String title;
-        private String content;
-        private int userId;
         private String username;
     }
 
