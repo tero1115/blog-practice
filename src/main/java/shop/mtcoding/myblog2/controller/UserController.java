@@ -1,6 +1,5 @@
 package shop.mtcoding.myblog2.controller;
 
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,11 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import shop.mtcoding.myblog2.dto.user.UserReq.JoinReqDto;
-
 import shop.mtcoding.myblog2.dto.user.UserReq.LoginReqDto;
 import shop.mtcoding.myblog2.handler.ex.CustomException;
 import shop.mtcoding.myblog2.model.User;
-import shop.mtcoding.myblog2.handler.ex.CustomException;
 import shop.mtcoding.myblog2.service.UserService;
 
 @Controller
