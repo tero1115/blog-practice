@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import shop.mtcoding.myblog2.dto.user.UserReq.JoinReqDto;
+import shop.mtcoding.myblog2.dto.user.UserReq.LoginReqDto;
 import shop.mtcoding.myblog2.handler.ex.CustomException;
 import shop.mtcoding.myblog2.model.User;
 import shop.mtcoding.myblog2.model.UserRepository;
@@ -25,6 +26,10 @@ public class UserService {
         if (result != 1) {
             throw new CustomException("회원가입실패");
         }
+    }
+
+    public User 로그인(LoginReqDto loginReqDto) {
+        return null;
     }
 
 }
